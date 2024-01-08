@@ -1,7 +1,10 @@
 <script>
 
 export default {
-    name: 'SingleCard'
+    name: 'SingleCard',
+    props: {
+        info: Object
+    }
 }
 
 </script>
@@ -9,11 +12,11 @@ export default {
 <template>
     <div class="my_card">
         <div>
-            <img class="img-fluid" src="https://www.w3schools.com/images/picture.jpg" alt="">
+            <img class="img-fluid" :src="info.card_images.image_url" alt="">
         </div>
         <div class="info_card text-center">
-            <h5 class="text-white">nome card</h5>
-            <span>Tipo</span>
+            <h5 class="text-white">{{ info.name }}</h5>
+            <span>{{ info.type }}</span>
         </div>
     </div>
 </template>

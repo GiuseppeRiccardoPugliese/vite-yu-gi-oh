@@ -7,7 +7,7 @@ export default {
 </script>
 
 <template>
-    <select class="bg-white border border-dark rounded-2 my-2 py-1 px-4" name="type" id="">
+    <select class="bg-white border border-dark rounded-2 my-3 py-1 px-4" name="type" id="">
         <option value="volvo">Alien</option>
         <option value="saab">Human</option>
         <option value="opel">Robot</option>

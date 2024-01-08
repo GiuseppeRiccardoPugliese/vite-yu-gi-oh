@@ -1,11 +1,19 @@
 <script>
+//Importo la mia card singola
 import SingleCard from './SingleCard.vue'
 
+//Importo lo store
+import { store } from '../store';
 
 export default {
     name: 'CardsList',
     components: {
         SingleCard
+    },
+    data() {
+        return {
+            store,
+        }
     }
 }
 
@@ -14,7 +22,7 @@ export default {
 <template>
     <div class="row mx-5">
         <div class="col-12 bg-dark text-white py-2">Found 39 cards</div>
-        <SingleCard />
+        <SingleCard v-for="card in store.CardsList" :key="card.id" :info="card" />
     </div>
 </template>
 

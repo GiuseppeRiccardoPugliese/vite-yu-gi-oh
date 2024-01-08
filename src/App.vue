@@ -1,15 +1,38 @@
 <script>
+//Importo axios
+import axios from 'axios';
+
+//Importo i componenti figli
 import AppHeader from './components/AppHeader.vue'
 import SearchType from './components/SearchType.vue'
 import CardsList from './components/CardsList.vue'
 
-
+//Importo lo store
+import { store } from './store';
 
 export default {
   components: {
     AppHeader,
     SearchType,
     CardsList
+  },
+  data() {
+    return {
+      store,
+    }
+  },
+  methods: {
+    getCard() {
+      axios.get(store.apiURL).then((res => {
+        store.CardsList = res.data.data;
+      }))
+        .catch((err => {
+          console.log("Questi sono gli errori", err);
+        }));
+    }
+  },
+  created() {
+    this.getCard();
   }
 }
 </script>
@@ -37,6 +60,5 @@ export default {
 
 main {
   background-color: #d48f38;
-  height: calc(100vh - 54.4px);
 }
 </style>

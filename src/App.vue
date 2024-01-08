@@ -33,6 +33,7 @@ export default {
   },
   created() {
     this.getCard();
+    console.log(this.getCard);
   }
 }
 </script>

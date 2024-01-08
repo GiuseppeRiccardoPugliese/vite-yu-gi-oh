@@ -12,7 +12,7 @@ export default {
 <template>
     <div class="my_card">
         <div>
-            <img class="img-fluid" :src="info.card_images.image_url" alt="">
+            <img class="img-fluid" :src="info.card_images[0].image_url" alt="">
         </div>
         <div class="info_card text-center">
             <h5 class="text-white">{{ info.name }}</h5>
@@ -27,7 +27,7 @@ export default {
 .my_card {
     padding: 0;
     width: calc((100% / 5) - 1rem);
-    margin-right: 1rem;
+    margin-bottom: 1rem;
 
     img {
         width: 100%;
@@ -36,6 +36,10 @@ export default {
 
     .info_card {
         background-color: $orange;
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 
         h5 {
             text-transform: capitalize;

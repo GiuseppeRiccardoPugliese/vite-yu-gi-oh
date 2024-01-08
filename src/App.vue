@@ -25,6 +25,7 @@ export default {
     getCard() {
       axios.get(store.apiURL).then((res => {
         store.CardsList = res.data.data;
+        store.loading = false;
       }))
         .catch((err => {
           console.log("Questi sono gli errori", err);

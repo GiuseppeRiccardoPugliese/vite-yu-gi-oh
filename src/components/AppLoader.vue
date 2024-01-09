@@ -7,18 +7,18 @@ export default {
 </script>
 
 <template>
-    <body>
+    <div class="app_loader">
         <div class="loader-container">
             <div class="loader"></div>
             <p>Caricamento in corso...</p>
         </div>
-    </body>
+    </div>
 </template>
 
 <style lang="scss" scoped>
 @use '../styles/partials/variables' as *;
 
-body {
+.app_loader {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;

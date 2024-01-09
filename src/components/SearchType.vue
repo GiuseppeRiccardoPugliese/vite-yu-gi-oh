@@ -16,7 +16,7 @@ export default {
         getArchetype() {
             axios.get(store.apiGetType)
                 .then((res => {
-                    store.cardType = res.data;
+                    store.cardType = res.data.slice(0, 20);
                 }))
                 .catch((err => {
                     console.log("Questi sono gli errori", err);
@@ -24,6 +24,7 @@ export default {
         }
     },
     created() {
+
         this.getArchetype();
         console.log(this.getArchetype);
     }

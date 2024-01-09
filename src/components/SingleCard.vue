@@ -16,7 +16,7 @@ export default {
         </div>
         <div class="info_card text-center">
             <h5 class="text-white">{{ info.name }}</h5>
-            <span>{{ info.type }}</span>
+            <span>{{ info.archetype }}</span>
         </div>
     </div>
 </template>

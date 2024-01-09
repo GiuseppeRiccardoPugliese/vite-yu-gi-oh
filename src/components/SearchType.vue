@@ -21,6 +21,9 @@ export default {
                 .catch((err => {
                     console.log("Questi sono gli errori", err);
                 }));
+        },
+        handleSelection() {
+            this.$emit('search');
         }
     },
     created() {
@@ -33,9 +36,11 @@ export default {
 </script>
 
 <template>
-    <select class="bg-white border border-dark rounded-2 my-3 py-1 px-4" name="type" id="">
+    <select v-model="store.searchArchetype" class="bg-white border border-dark rounded-2 my-3 py-1 px-4" name="type" id=""
+        @change="$emit, handleSelection('search')">
         <option value="">Select archetype</option>
-        <option v-for="(archetype, index) in store.cardType" :key="index" value="archetype">{{ archetype.archetype_name }}
+        <option v-for="( archetype, index ) in  store.cardType " :key="index" :value="archetype.archetype_name">{{
+            archetype.archetype_name }}
         </option>
     </select>
 </template>

@@ -23,7 +23,14 @@ export default {
   },
   methods: {
     getCard() {
-      axios.get(store.apiURL).then((res => {
+
+      let myUrl = store.apiURL;
+
+      if (store.searchArchetype !== '') {
+        myUrl += `?${store.typeArchetype}=${store.searchArchetype}`
+      }
+
+      axios.get(myUrl).then((res => {
         store.CardsList = res.data.data;
         store.loading = false;
       }))
@@ -46,7 +53,7 @@ export default {
   <main>
     <!-- Filter cards -->
     <section>
-      <SearchType />
+      <SearchType @search="getCard" />
     </section>
 
     <section>

@@ -18,6 +18,11 @@ export default {
         return {
             store,
         }
+    },
+    computed: {
+        resultCard() {
+            return store.CardsList.length;
+        }
     }
 }
 
@@ -25,7 +30,7 @@ export default {
 
 <template>
     <div v-if="!store.loading" class="row mx-5 justify-content-between">
-        <div class="col-12 bg-dark text-white py-2">Found 39 cards</div>
+        <div v-if="resultCard > 0" class="col-12 bg-dark text-white py-2">Found {{ resultCard }} cards</div>
         <SingleCard v-for="card in store.CardsList" :key="card.id" :info="card" />
     </div>
 

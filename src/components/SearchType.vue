@@ -22,10 +22,8 @@ export default {
                     console.log("Questi sono gli errori", err);
                 }));
         },
-
     },
     created() {
-
         this.getArchetype();
         console.log(this.getArchetype);
     }

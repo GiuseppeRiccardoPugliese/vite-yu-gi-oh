@@ -24,10 +24,11 @@ export default {
   methods: {
     getCard() {
 
-      let myUrl = store.apiURL;
+      let myUrl = store.filterURL;
 
       if (store.searchArchetype !== '') {
-        myUrl += `?${store.typeArchetype}=${store.searchArchetype}`
+        myUrl = store.apiURL;
+        myUrl += `?${store.typeArchetype}=${store.searchArchetype}`;
       }
 
       axios.get(myUrl).then((res => {
